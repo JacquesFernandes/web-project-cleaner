@@ -12,15 +12,15 @@ check_for_names = [
 
 if __name__ == "__main__":
   parser = argparse.ArgumentParser()
-  parser.add_argument('start', help="base directory to start searching from", nargs='?', default=os.getcwd())
-  # parser.add_argument('-d', '--depth', help="Max depth to check", type=int, nargs='?', default=None)
+  parser.add_argument('start', help="Base directory to start searching from", nargs='?', default=os.getcwd())
+  parser.add_argument('-v', '--verbose', help="Make execution more verbose", nargs='?', default=False)
   args = parser.parse_args()
   
-  print('Search root:', args.start)
   root_path = searcher.getFullQualifiedPath(args.start)
+  print('Search root:', root_path)
 
-  # print('Max depth:', args.depth)
-  # max_depth = args.depth
+  verbose = True if args.verbose is None else False
+  print("verbose?", verbose)
 
   if root_path is None:
     print("Invalid path:", args.start)
@@ -29,16 +29,18 @@ if __name__ == "__main__":
   paths = []
   curr_path = root_path
 
-
-  print("---")
+  if verbose:
+    print("---")
 
   results = []
 
   for path in searcher.searchForTerms(root_path, check_for_names):
-    print(path)
+    if verbose:
+      print(path)
     results.append(path)
 
-  print("---")
+  if verbose:
+    print("---")
 
   print("number of results:", len(results))
 
