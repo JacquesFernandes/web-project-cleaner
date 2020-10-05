@@ -41,10 +41,12 @@ def searchForTerms(path:str, search_terms:List[str], verbose=False):
 
 
 def getOptimalHumanSize(kb:int) -> str:
-  if (gb:=kb2gb(kb)) >= 0:
+  gb = kb2gb(kb)
+  if gb >= 0:
     return '{:.2f} GB'.format(gb)
 
-  if mb:=kb2mb(kb) and mb >= 0:
+  mb = kb2mb(kb)
+  if mb >= 0:
     return '{:.2f} MB'.format(mb)
     
   return '{} KB'.format(kb)
