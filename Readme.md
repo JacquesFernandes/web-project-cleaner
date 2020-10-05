@@ -1,4 +1,4 @@
-# Project Cleaner
+# Web Project Cleaner
 
 ## About
 Tired of all your `vendor` and `node_module` folders scattered here and there taking up all that space?
