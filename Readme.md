@@ -29,3 +29,5 @@ Here's your solution!
 **READ** and run the `sample_setup.sh`.
 - Emphasis on **READ**, I am not responsible if your machine sends your nearest nuclear reactor into meltdown or kills your cat / dog / favourite human
 - Download the script from Github or read and copy it.
+- Bash:
+  - `wget https://raw.githubusercontent.com/JacquesFernandes/web-project-cleaner/master/sample_setup.sh -O /var/tmp/wpc_setup.sh && bash /var/tmp/wpc_setup.sh`
